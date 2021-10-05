@@ -6,7 +6,7 @@ export default class Create extends Component {
     state = {
         plantid: '',
         name: '',
-        category: '',
+        category: 1,
         categories: [],
         growzonenumber: '',
         wateringinterval: '',
@@ -15,24 +15,33 @@ export default class Create extends Component {
         edible: true
 
     };
-    
+
     componentDidMount = async () => {
         const categoryRetrieval = await getCategories();
         this.setState({categories:categoryRetrieval})
-        
         
     } 
 
     handleSubmit = async (e) => {
         e.preventDefault();
+      
         
-        await createPlant(this.state)
-        console.log(this.state)
-        // this.props.history.push('/Plants')
+        await createPlant({
+            plantid: this.state.plantid,
+            name: this.state.name,
+            category: this.state.category,
+            growzonenumber: this.state.growzonenumber,
+            wateringinterval: this.state.wateringinterval,
+            imageurl: this.state.imageurl,
+            description: this.state.description,
+            edible: this.state.edible
+        })
+        this.props.history.push('/Plants')
     
     }
 
     render() {
+        console.log(this.state)
         return (
             <div className='form-cnt'>
                 <form className='form-create' onSubmit={this.handleSubmit}>
