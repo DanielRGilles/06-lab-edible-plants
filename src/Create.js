@@ -67,7 +67,7 @@ export default class Create extends Component {
                         Image<input onChange={(e) => this.setState({imageurl: e.target.value})} />
                     </label>
                     <label>
-                       Description <input onChange={(e) => this.setState({description: e.target.value})} />
+                       Description <textarea onChange={(e) => this.setState({description: e.target.value})} />
                     </label>
 
                 <button>Submit</button>

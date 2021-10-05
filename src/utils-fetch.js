@@ -17,7 +17,7 @@ export async function getCategory(id) {
     return response.body;
 }
 export async function deletePlant(id) {
-    const response = await request.delete(`https://murmuring-everglades-86690.herokuapp.com/categories/${id}`)
+    const response = await request.delete(`https://murmuring-everglades-86690.herokuapp.com/edible-plants/${id}`)
     return response.body;
 }
 
@@ -28,7 +28,7 @@ export async function createPlant(ediblePlant) {
 }
 
 export async function editPlant(id, ediblePlant) {
-    const response = await request.put(`https://murmuring-everglades-86690.herokuapp.com/categories/${id}`)
+    const response = await request.put(`https://murmuring-everglades-86690.herokuapp.com/edible-plants/${id}`)
     .send(ediblePlant)
     return response.body;
 }

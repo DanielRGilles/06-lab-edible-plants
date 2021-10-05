@@ -62,13 +62,21 @@
   margin-top: 15px;
   border: solid 2px black;
   background-color: aqua;
+  height: fit-content;
   
 }
+
 .form-cnt {
 display: flex;
 justify-content: center;
 align-items: center;
 height: 50vh;
-
-
+}
+.descript {
+  display: flex;
+  justify-self: left;
+  overflow-wrap: break-word;
+  height: 140px;
+  width: 300px;
+  
 }
