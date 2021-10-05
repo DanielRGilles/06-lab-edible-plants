@@ -7,7 +7,8 @@ import {
 } from "react-router-dom";
 import Plants from "./Plants"; 
 import Home from "./Home";
-import Detail from "./Detail";
+import Edit from "./Edit";
+import Create from './Create';
 
 export default class App extends Component {
   render() {
@@ -16,14 +17,19 @@ export default class App extends Component {
           <Router>
             <header>
               <NavLink
-              exact
+              exact className='links'
               activeStyle={{fontSize:'1.5rem'}}
               to='/'>Home
               </NavLink>
               <NavLink
-              exact
+              exact className='links'
               activeStyle={{fontSize:'1.5rem'}}
-              to='/Plants'>Search
+              to='/Plants'>List
+              </NavLink>
+              <NavLink
+              exact className='links'
+              activeStyle={{fontSize:'1.5rem'}}
+              to='/Create'>Add Item
               </NavLink>
             </header>
             <Switch>
@@ -38,9 +44,14 @@ export default class App extends Component {
                             render={(routerProps) => <Plants {...routerProps} />} 
                         />
             <Route 
-                            path="/Detail/:id"
+                            path="/Edit/:id"
                             exact
-                            render={(routerProps) => <Detail {...routerProps} />} 
+                            render={(routerProps) => <Edit {...routerProps} />} 
+                        />
+            <Route 
+                            path="/Create/"
+                            exact
+                            render={(routerProps) => <Create {...routerProps} />} 
                         />
             </Switch>
           </Router>
