@@ -15,14 +15,17 @@ export default class Create extends Component {
         edible: true
 
     };
+    
     componentDidMount = async () => {
         const categoryRetrieval = await getCategories();
         this.setState({categories:categoryRetrieval})
-        console.log(categoryRetrieval)
+        
         
     } 
+
     handleSubmit = async (e) => {
         e.preventDefault();
+        
         await createPlant(this.state)
         console.log(this.state)
         // this.props.history.push('/Plants')
@@ -33,29 +36,29 @@ export default class Create extends Component {
         return (
             <div className='form-cnt'>
                 <form className='form-create' onSubmit={this.handleSubmit}>
-                    <label>Scientific Name<input onChange={(e) => this.setState({plantid: e.target.value})} value={this.state.plantid}/></label>
+                    <label>Scientific Name<input onChange={(e) => this.setState({plantid: e.target.value})} /></label>
 
-                    <label>Common Name <input onChange={(e) => this.setState({name: e.target.value})} value={this.state.name}/></label>
+                    <label>Common Name <input onChange={(e) => this.setState({name: e.target.value})} /></label>
 
                     <label>
                        Category <select onChange={(e) => this.setState({category: e.target.value})} >
-                       {this.state.categories.map(category => 
-                                <option key={`${category.category_name}-${category.id}`} value={category.id}>
-                                    {category.category_name}
+                       {this.state.categories.map(categor => 
+                                <option key={`${categor.category_name}-${categor.id}`} value={categor.id}>
+                                    {categor.category_name}
                                 </option>)}
                         </select>
                     </label>
                     <label>
-                       Growing Zone Number <input onChange={(e) => this.setState({growzonenumber: e.target.value})} value={this.state.growzonenumber}/>
+                       Growing Zone Number <input onChange={(e) => this.setState({growzonenumber: e.target.value})} />
                     </label>
                     <label>
-                        Watering Interval <input onChange={(e) => this.setState({wateringinterval: e.target.value})} value={this.state.wateringinterval}/>
+                        Watering Interval <input onChange={(e) => this.setState({wateringinterval: e.target.value})} />
                     </label>
                     <label>
-                        Image<input onChange={(e) => this.setState({imageurl: e.target.value})} value={this.state.imageurl}/>
+                        Image<input onChange={(e) => this.setState({imageurl: e.target.value})} />
                     </label>
                     <label>
-                       Description <input onChange={(e) => this.setState({description: e.target.value})} value={this.state.description}/>
+                       Description <input onChange={(e) => this.setState({description: e.target.value})} />
                     </label>
 
                 <button>Submit</button>

@@ -20,11 +20,13 @@ export async function deletePlant(id) {
     const response = await request.delete(`https://murmuring-everglades-86690.herokuapp.com/categories/${id}`)
     return response.body;
 }
+
 export async function createPlant(ediblePlant) {
     const response = await request.post('https://murmuring-everglades-86690.herokuapp.com/edible-plants/')
     .send(ediblePlant)
     return response.body;
 }
+
 export async function editPlant(id, ediblePlant) {
     const response = await request.put(`https://murmuring-everglades-86690.herokuapp.com/categories/${id}`)
     .send(ediblePlant)
