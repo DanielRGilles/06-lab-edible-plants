@@ -19,7 +19,7 @@ fetchData = async() => {
       <ul>
        { this.state.plant.map(plantee => { return( 
            <li className='li-plant'key={plantee.id}>{plantee.name}<div>{plantee.plantId}</div>
-           <Link to={`/Detail/${plantee.id}`}><img className='plant-image'src={plantee.imageurl} alt='plants'></img></Link>
+           <Link to={`/Edit/${plantee.id}`}><img className='plant-image'src={plantee.imageurl} alt='plants'></img></Link>
            <p className='item-description'>{plantee.description}</p></li>
        ) }) }
       </ul>
