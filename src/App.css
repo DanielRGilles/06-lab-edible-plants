@@ -39,11 +39,19 @@
 .plant-image {
   width: 100px;
 }
+.plant-cnt {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 .li-plant {
   list-style: none;
   border: solid 2px black;
   padding: 5px;
   margin: 3px;
+  width: 50%;
 }
 .links {
   margin: 5px;

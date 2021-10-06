@@ -32,3 +32,4 @@ export async function editPlant(id, ediblePlant) {
     .send(ediblePlant)
     return response.body;
 }
+
