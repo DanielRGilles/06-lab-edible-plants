@@ -58,7 +58,7 @@ export default class Create extends Component {
                     <label>
                        Category <select onChange={(e) => this.setState({category: e.target.value})} >
                        {this.state.categories.map(categor => 
-                                <option key={`${categor.category_name}-${categor.id}`} value={categor.id}>
+                                <option key={`${categor.category_name}-${categor.id}`} value={categor.id} >
                                     {categor.category_name}
                                 </option>)}
                         </select>
