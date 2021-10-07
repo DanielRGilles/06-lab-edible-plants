@@ -16,7 +16,7 @@ fetchData = async() => {
 }
   render() {
     return (
-      <ul>
+      <ul className='plant-cnt'>
        { this.state.plant.map(plantee => { return( 
            <li className='li-plant'key={plantee.id}>{plantee.name}<div>{plantee.plantId}</div>
            <Link to={`/Edit/${plantee.id}`}><img className='plant-image'src={plantee.imageurl} alt='plants'></img></Link>

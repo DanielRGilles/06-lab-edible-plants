@@ -41,13 +41,13 @@ export default class Create extends Component {
     }
 
     render() {
-        console.log(this.state)
+        
         return (
             <div className='form-cnt'>
                 <form className='form-create' onSubmit={this.handleSubmit}>
-                    <label>Scientific Name<input onChange={(e) => this.setState({plantid: e.target.value})} /></label>
+                    <label>Scientific Name<input required onChange={(e) => this.setState({plantid: e.target.value})} /></label>
 
-                    <label>Common Name <input onChange={(e) => this.setState({name: e.target.value})} /></label>
+                    <label>Common Name <input required onChange={(e) => this.setState({name: e.target.value})} /></label>
 
                     <label>
                        Category <select onChange={(e) => this.setState({category: e.target.value})} >
@@ -58,16 +58,16 @@ export default class Create extends Component {
                         </select>
                     </label>
                     <label>
-                       Growing Zone Number <input onChange={(e) => this.setState({growzonenumber: e.target.value})} />
+                       Growing Zone Number <input required onChange={(e) => this.setState({growzonenumber: e.target.value})} />
                     </label>
                     <label>
-                        Watering Interval <input onChange={(e) => this.setState({wateringinterval: e.target.value})} />
+                        Watering Interval <input required onChange={(e) => this.setState({wateringinterval: e.target.value})} />
                     </label>
                     <label>
-                        Image<input onChange={(e) => this.setState({imageurl: e.target.value})} />
+                        Image<input required onChange={(e) => this.setState({imageurl: e.target.value})} />
                     </label>
                     <label>
-                       Description <textarea onChange={(e) => this.setState({description: e.target.value})} />
+                       Description <textarea className='descript'required onChange={(e) => this.setState({description: e.target.value})} />
                     </label>
 
                 <button>Submit</button>
